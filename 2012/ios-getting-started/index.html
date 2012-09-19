@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<title>iOS: getting started — batsuev.com</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../../shower/themes/ribbon/styles/style.css" />
+	<style type="text/css">
+		img.revenue {
+			float: left;
+		}
+		#Prerequisites center img {
+			vertical-align: middle;
+			display: inline-block;
+		}
+
+		#Mockup img {
+			vertical-align: middle;
+			display: block;
+			width: 191px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		#MockupAndDesign section {
+			font-size: 200%;
+		}
+
+		#MockupAndDesign p {
+			margin-top: 20px;
+		}
+
+		#Design section p {
+			margin: 0;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			width: 100%;
+			text-align: center;
+		}
+
+		#Design section img {
+			width: 586px;
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
+		}
+
+		#Retina div.retina-icons {
+			margin-top: 50px;
+			display: block;
+			}
+
+			#Retina div.retina-icons div {
+				display: inline-block;
+				width: 300px;
+				text-align: center;
+				}
+
+		#Versions img {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		#iOSVersions div.content {
+			font-size: 3em;
+			margin-left: auto;
+			margin-right: auto;
+			width: 400px;
+			font-weight: bold;
+			text-align: center;
+		}
+
+		.code-slide pre {
+			margin-top: -20px;
+		}
+
+		#TestFlight div.content {
+			padding-top: 50px;
+			text-align:  center;
+			font-size: 2.5em;
+			}
+
+			#TestFlight .content img {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+				width: 128px;
+				}
+
+	</style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>iOS: getting started</h1>
+		<p><a href="http://batsuev.com/">Aleksandr Batsuev</a></p>
+	</header>
+
+	<div class="slide cover w" id="GeekfestCover"><div>
+		<section>
+			<img src="./img/b-02.png"></img>
+		</section>
+	</div></div>
+
+	<div class="slide" id="Cover"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started</h2>
+			</header>
+			<h3><strong>Aleksandr Batsuev</strong></h3>
+			<ul>
+				<li>Follow me on twitter: <a href="http://twitter.com/@alex_batsuev">@alex_batsuev</a></li>
+				<li>Follow me on github: <a href="http://github.com/batsuev">@batsuev</a></li>
+				<li><a href="http://batsuev.com">http://batsuev.com</a></li>
+			</ul>
+		</section>
+	</div></div>
+
+	<!-- prerequisites -->
+
+	<div class="slide" id="Prerequisites"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Prerequisites</h2>
+			</header>
+			<center>
+				<img src="./img/mac.png" width="260" height="167" />
+				<img src="./img/iphone.png" width="177" height="300" />
+				<img src="./img/itc-logo.png" width="172" height="23" />
+			</center>
+		</section>
+	</div></div>
+
+	<div class="slide" id="SimulatorLimitations"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Simulator limitations</h2>
+			</header>
+			<ul>
+				<li>Accelerometer</li>
+				<li>Compass</li>
+				<li>Camera</li>
+				<li>Performance</li>
+				<li>Push notifications</li>
+				<li>...</li>
+			</ul>
+		</section>
+	</div></div>
+
+	<div class="slide" id="SimulatorFeatures"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Simulator features</h2>
+			</header>
+			<img src="./img/simulator-gps.png" width="530" height="320" />
+		</section>
+	</div></div>
+
+	<div class="slide" id="Subscription"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Subscription</h2>
+			</header>
+			<ul>
+				<li>Debug on device</li>
+				<li>Share your app for tests</li>
+				<li>Game Center</li>
+				<li>InApp purchases</li>
+				<li>Push Notifications</li>
+				<li>AppStore</li>
+			</ul>
+		</section>
+	</div></div>
+
+	<div class="slide" id="SubscriptionHowTo"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Subscription how to</h2>
+			</header>
+			<img src="./img/subscription.png" width="457" height="273" />
+		</section>
+	</div></div>
+
+	<!--  /prerequisites -->
+
+	<!-- mockup-and-design -->
+
+	<div class="slide" id="Mockup"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Mockup</h2>
+			</header>
+			
+			<img src="./img/mockup.png" width="191" height="373" />
+			
+		</section>
+	</div></div>
+
+	<div class="slide" id="MockupAndDesign"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Mockup and design</h2>
+			</header>
+
+			<a href="http://developer.apple.com/library/ios/#DOCUMENTATION/UserExperience/Conceptual/MobileHIG/Introduction/Introduction.html">iOS Human Interface Guidelines</a>
+
+			<p>1024x1024 o_O</p>
+			
+		</section>
+	</div></div>
+
+	<div class="slide" id="Design"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Android screen fragmentation</h2>
+			</header>
+			<p>trollface.png, trollface_1.png, trollface_2.png, ..., trollface_100500.png</p>
+			<img src="./img/android-screens.png" width="586" height="346" />
+		</section>
+	</div></div>
+
+	<div class="slide" id="Retina"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Retina display</h2>
+			</header>
+			<div class="retina-icons">
+				<div>
+					<img src="./img/icon.png" width="57" height="57" />
+					<p>icon.png (57x57)</p>
+				</div>
+				<div>
+					<img src="./img/icon@2x.png" width="114" height="114" />
+					<p>icon@2x.png (114x114)</p>
+				</div>
+			<div>
+			<pre><code>[UIImage imageNamed:@"<mark class="important">icon.png</mark>"]</code></pre>
+		</section>
+	</div></div>
+
+	<!-- /mockup-and-design -->
+
+	<!-- development -->
+	<div class="slide cover w" id="Versions"><div>
+		<section>
+			<img src="./img/android-versions.png" width="779" height="469" />
+		</section>
+	</div></div>
+
+	<div class="slide" id="iOSVersions"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - iOS versions</h2>
+			</header>
+			<div class="content">
+				iOS 4 ~20%
+			</div>
+		</section>
+	</div></div>
+
+	<div class="slide" id="objc-arc"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Objective C ARC</h2>
+			</header>
+			<ul>
+				<li><strong>ARC</strong> - Automatic Reference Counting</li>
+				<li><strong>MRR</strong> - Manual Retain Release</li>
+			</ul>
+			<a href="http://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/MemoryMgmt/Articles/MemoryMgmt.html#//apple_ref/doc/uid/10000011i">Apple: Advanced Memory Management Programming Guide</a>
+		</section>
+	</div></div>
+
+	<div class="slide cover w" id="objc-arc-flow"><div>
+		<section>
+			<img src="./img/memory_management.jpg" />
+		</section>
+	</div></div>
+
+	<div class="slide cover w" id="objc-use-arc"><div>
+		<section>
+			<img src="./img/arc.png" />
+		</section>
+	</div></div>
+
+	<div class="slide" id="objc-borsch"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Objective C</h2>
+			</header>
+			<ul>
+				<li>Мне воды соСвёклой сСолью сМясом сЛуком сКартошкой, пожалуйста</li>
+				<li>Борщ что ли???</li>
+		</section>
+	</div></div>
+
+	<div class="slide" id="objc-files"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Objective C</h2>
+			</header>
+			<ul>
+				<li><mark>Hello.h</mark> - header file</li>
+				<li><mark>Hello.m</mark> - implementation + private headers</li>
+			</ul>
+		</section>
+	</div></div>
+
+	<div class="slide code-slide" id="objc"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Objective C: Hello.h</h2>
+			</header>
+			<div class="content">
+				<pre>
+<code>@interface Hello : NSObject</code>
+<code>@property (NSString*) user;</code>
+<code>@property (int) counter;</code>
+<code>+ (Hello*)helloWithUser:(NSString*)user;</code>
+<code>- (id)initWithUser:(NSString*)user;</code>
+<code>- (void)sayHello;</code>
+<code>- (void)sayHelloTo:(NSString*)user;</code>
+<code>@end</code>
+
+				</pre>
+			</div>
+		</section>
+	</div></div>
+
+	<div class="slide code-slide" id="objcBounds"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Objective C: Hello.h</h2>
+			</header>
+			<div class="content">
+				<pre>
+<code><mark class="important">@interface</mark> <mark>Hello</mark> : NSObject</code>
+<code>@property (NSString*) user;</code>
+<code>@property (int) counter;</code>
+<code>+ (Hello*)helloWithUser:(NSString*)user;</code>
+<code>- (id)initWithUser:(NSString*)user;</code>
+<code>- (void)sayHello;</code>
+<code>- (void)sayHelloTo:(NSString*)user;</code>
+<code><mark class="important">@end</mark></code>
+
+				</pre>
+			</div>
+		</section>
+	</div></div>
+
+	<div class="slide code-slide" id="objcProperties"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Objective C properties: Hello.h</h2>
+			</header>
+			<div class="content">
+				<pre>
+<code>@interface Hello : NSObject</code>
+<code><mark class="important">@property (NSString*) user;</mark></code>
+<code><mark class="important">@property (int) counter;</mark></code>
+<code>+ (Hello*)helloWithUser:(NSString*)user;</code>
+<code>- (id)initWithUser:(NSString*)user;</code>
+<code>- (void)sayHello;</code>
+<code>- (void)sayHelloTo:(NSString*)user;</code>
+<code>@end</code>
+				</pre>
+			</div>
+		</section>
+	</div></div>
+
+	<div class="slide code-slide" id="objcStaticSelectors"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Objective C selectors: Hello.h</h2>
+			</header>
+			<div class="content">
+				<pre>
+<code>@interface Hello : NSObject</code>
+<code>@property (NSString*) user;</code>
+<code>@property (int) counter;</code>
+<code><mark class="important">+ (Hello*)helloWithUser:(NSString*)user;</mark></code>
+<code>- (id)initWithUser:(NSString*)user;</code>
+<code>- (void)sayHello;</code>
+<code>- (void)sayHelloTo:(NSString*)user;</code>
+<code>@end</code>
+				</pre>
+			</div>
+		</section>
+	</div></div>
+
+	<div class="slide code-slide" id="objcConstructors"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Objective C init: Hello.h</h2>
+			</header>
+			<div class="content">
+				<pre>
+<code>@interface Hello : NSObject</code>
+<code>@property (NSString*) user;</code>
+<code>@property (int) counter;</code>
+<code>+ (Hello*)helloWithUser:(NSString*)user;</code>
+<code><mark class="important">- (id)initWithUser:(NSString*)user;</mark></code>
+<code>- (void)sayHello;</code>
+<code>- (void)sayHelloTo:(NSString*)user;</code>
+<code>@end</code>
+				</pre>
+			</div>
+		</section>
+	</div></div>
+
+	<div class="slide code-slide" id="objcSelectors"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Objective C selectors: Hello.h</h2>
+			</header>
+			<div class="content">
+				<pre>
+<code>@interface Hello : NSObject</code>
+<code>@property (NSString*) user;</code>
+<code>@property (int) counter;</code>
+<code>+ (Hello*)helloWithUser:(NSString*)user;</code>
+<code>- (id)initWithUser:(NSString*)user;</mark></code>
+<code><mark class="important">- (void)sayHello;</mark></code>
+<code><mark class="important">- (void)sayHelloTo:(NSString*)user;</mark></code>
+<code>@end</code>
+				</pre>
+			</div>
+		</section>
+	</div></div>
+
+	<div class="slide" id="objcImpl"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Objective C: Hello.m</h2>
+			</header>
+			<div class="content">
+				<pre>
+<code><mark class="important">@implementation Hello</mark></code>
+<code>+ (Hello*)helloWithUser:(NSString*)user {</code>
+<code>  ...</code>
+<code>}</code>
+<code>...</code>
+<code><mark class="important">@end</mark></code>
+				</pre>
+			</div>
+		</section>
+	</div></div>
+
+	<div class="slide" id="objcImplStatic"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Objective C: Hello.m</h2>
+			</header>
+			<div class="content">
+				<pre>
+<code>@implementation Hello</code>
+<code><mark class="important">+ (Hello*)helloWithUser:(NSString*)user {</mark></code>
+<code>  return [[Hello alloc] initWithUser:user];</code>
+<code><mark class="important">}</mark></code>
+<code>...</code>
+<code>@end</code>
+				</pre>
+			</div>
+		</section>
+	</div></div>
+
+	<div class="slide code-slide" id="objcImplInit"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Objective C: Hello.m</h2>
+			</header>
+			<div class="content">
+				<pre>
+<code>- (id)initWithUser:(NSString*)user {</code>
+<code>	self = [super init];</code>
+<code>	if (self) {</code>
+<code>		self.user = user;</code>
+<code>	}</code>
+<code>	return self;</code>
+<code>}</code>
+				</pre>
+			</div>
+		</section>
+	</div></div>
+
+	<div class="slide code-slide" id="objcNull"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Objective C</h2>
+			</header>
+			<div class="content">
+				<pre>
+<code>NSArray *a = <mark>nil</mark>;</code>
+<code>NSLog(@"%i", a.count); // 0</code>
+				</pre>
+			</div>
+		</section>
+	</div></div>
+
+	<div class="slide code-slide" id="objcUsage"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Objective C</h2>
+			</header>
+			<div class="content">
+				<pre>
+<code>Hello *h = [Hello helloWithUser:@"Vasya"];</code>
+<code>h.user = @"Petya";</code>
+<code>[h sayHello];</code>
+<code>[h sayHelloTo:@"Iv"];</code>
+<code>[h performSelector:@selector(sayHelloTo:)</code>
+<code>        withObject:@"Petya"];</code>
+				</pre>
+			</div>
+		</section>
+	</div></div>
+
+	<div class="slide code-slide" id="objcBlocksExample"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Objective C blocks</h2>
+			</header>
+			<div class="content">
+				<pre>
+<code>AFJSONRequestOperation *operation = [AFJSONRequestOperation</code>
+<code> JSONRequestOperationWithRequest:request</code>
+<code>   <mark class="important">success:^(NSURLRequest *request, </mark></code>
+<code>			   <mark class="important">NSHTTPURLResponse *response,</mark></code>
+<code> 			   <mark class="important">id JSON) {</mark></code>
+<code>    NSLog(@"Public Timeline: %@", JSON);</code>
+<code>} failure:nil];</code>
+				</pre>
+				<a style="margin-left: 50px" href="http://developer.apple.com/library/ios/#documentation/cocoa/Conceptual/Blocks/Articles/00_Introduction.html">Apple: Blocks Programming Topics</a>
+			</div>
+		</section>
+	</div></div>
+
+	<div class="slide code-slide" id="objcCategories"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Objective C categories</h2>
+			</header>
+			<div class="content">
+				<pre>
+<code>#import "ClassName.h"</code>
+<code>@interface ClassName ( CategoryName )</code>
+<code>// method declarations</code>
+<code>@end</code>
+				</pre>
+				<a style="margin-left: 50px" href="http://developer.apple.com/library/ios/#documentation/cocoa/conceptual/objectivec/chapters/occategories.html">Apple: Categories and Extensions</a>
+			</div>
+		</section>
+	</div></div>
+
+	<div class="slide" id="objcHelp"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Objective C tutorials</h2>
+			</header>
+			<ul>
+				<li><a href="https://developer.apple.com/library/mac/#documentation/Cocoa/Conceptual/ObjectiveC/Introduction/introObjectiveC.html#//apple_ref/doc/uid/TP30001163">Apple: The Objective-C Programming Language</a></li>
+				<li><a href="http://developer.apple.com">developer.apple.com</a></li>
+				<li><a href="http://stackoverflow.com">stackoverflow</a></li>
+				<li>OpenSource projects: like wordrpress app</li>
+			</ul>
+		</section>
+	</div></div>
+
+	<div class="slide cover w" id="objcInterfaceBuilder"><div>
+		<section>
+			<img src="./img/interface-builder.png" />
+		</section>
+	</div></div>
+
+	<div class="slide cover w" id="objcInterfaceBuilderConnect"><div>
+		<section>
+			<img src="./img/connect.png" />
+		</section>
+	</div></div>
+
+	<div class="slide" id="objcLib"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Frameworks</h2>
+			</header>
+			<ul>
+				<li>AFNetworking</li>
+				<li>JSON</li>
+				<li>Yandex Map Kit</li>
+				<li>Apple: GameCenter, Twitter, etc...</li>
+			</ul>
+		</section>
+	</div></div>
+
+	<div class="slide cover" id="objcProject"><div>
+		<section>
+			<img src="./img/project.png" />
+		</section>
+	</div></div>
+
+
+	<div class="slide" id="objcProjectInternal"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Project structure</h2>
+			</header>
+			<pre>
+<code>files = (</code>
+<code>	FA7120C415A5CB6900316D2B /* main.m */,</code>
+<code>	FA7120C815A5CB6900316D2B /* AppDelegate.m */,</code>
+<code>	FA2A97FE15A6F3D300F43346 /* Player.m */,</code>
+<code>	FA2A980115A6F40C00F43346 /* PlayListItem.m */,</code>
+<code>	...</code>
+<code>);</code>
+			</pre>
+		</section>
+	</div></div>
+
+	<div class="slide cover" id="objcProfiler"><div>
+		<section>
+			<img src="./img/profilers.png" />
+		</section>
+	</div></div>
+
+	<div class="slide cover" id="objcDeviceProfiler"><div>
+		<section>
+			<img src="./img/profilers-device.png" />
+		</section>
+	</div></div>
+
+	<div class="slide" id="objcOther"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Other</h2>
+			</header>
+			<ul>
+				<li>GCD</li>
+				<li>NSLocalizedString, localization</li>
+				<li>Reusable code: add mac target</li>
+			</ul>
+		</section>
+	</div></div>
+
+	<!-- /development -->
+	<!-- testing -->
+
+	<div class="slide" id="Testing"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Testing</h2>
+			</header>
+			<ul>
+				<li>iOS 4, iOS 5, iOS 6</li>
+				<li>100 devices</li>
+			</ul>
+		</section>
+	</div></div>
+
+	<div class="slide" id="TestFlight"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - TestFlight</h2>
+			</header>
+			<div class="content">
+				<img src="./img/testflight-logo.png" />
+				<a href="http://testflightapp.com">TestFlightApp.com</a>
+			<div>
+		</section>
+	</div></div>
+
+	<div class="slide cover w" id="TestFlightHow"><div>
+		<section>
+			<img src="./img/testflight-how.png" />
+		</section>
+	</div></div>
+
+	<!-- /testing -->
+
+	<!-- stats -->
+
+	<div class="slide" id="Stats"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Stats</h2>
+			</header>
+			<ul>
+				<li>iTunes Connect</li>
+				<li>Google Analytics</li>
+				<li>Flurry</li>
+				<li>TestFlight live</li>
+			</ul>
+		</section>
+	</div></div>
+
+	<!-- /stats -->
+
+	<!-- Final -->
+
+	<div class="slide" id="AppStore"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - AppStore</h2>
+			</header>
+			<ul>
+				<li>Неделя ожидания.</li>
+				<li>Ресабмит бинарника - снова неделя ожидания.</li>
+				<li>Апдейты - неделя ожидания. Если сильно срочно - то можно.</li>
+				<li>Mac AppStore - 20+ дней ожидания</li>
+			</ul>
+		</section>
+	</div></div>
+
+	<div class="slide" id="Profit"><div>
+		<section>
+			<header>
+				<h2>iOS: getting started - Profit</h2>
+			</header>
+			<ul>
+				<li>Надо регистрировать ИП, надо ебаться с валютным контролем.</li>
+				<li>Не ждите миллионов.</li>
+			</ul>
+		</section>
+	</div></div>
+
+	<div class="slide" id="Q"><div>
+		<section>
+			<header>
+				<h2>Questions?</h2>
+			</header>
+			<h3><strong>Aleksandr Batsuev</strong></h3>
+			<ul>
+				<li>Follow me on twitter: <a href="http://twitter.com/@alex_batsuev">@alex_batsuev</a></li>
+				<li>Follow me on github: <a href="http://github.com/batsuev">@batsuev</a></li>
+				<li><a href="http://batsuev.com">http://batsuev.com</a></li>
+			</ul>
+		</section>
+	</div></div>
+
+	<!-- end. 
+
+	Links:
+		http://www.zdnet.com/blog/hardware/600000-apps-in-apples-app-store-yet-i-cant-find-anything-i-want/19549
+		http://en.wikipedia.org/wiki/Android_(operating_system)
+		http://opensignalmaps.com/reports/fragmentation.php?
+
+	-->
+	
+	
+	<script src="../../shower/scripts/script.js"></script>
+</body>
+</html>
