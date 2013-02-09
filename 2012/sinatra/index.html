@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<title>Sinatra — когда нет ничего лишнего — Aleksandr Batsuev</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="../../shower/themes/ribbon/styles/style.css" />
+	<style type="text/css">
+	.smallCode {
+		font-size: 10px;
+	}
+
+	div.slide, section {
+		overflow: hidden;
+	}
+
+	div.code {
+		overflow: hidden;
+	}
+	</style>
+</head>
+<body class="list">
+	<header class="caption">
+		<h1>Sinatra — когда нет ничего лишнего</h1>
+		<p><a href="http://batsuev.com/">Aleksandr Batsuev</a></p>
+	</header>
+
+	<div class="slide" id="Cover"><div>
+		<section>
+			<header>
+				<h2>Sinatra — когда нет ничего лишнего</h2>
+			</header>
+			<h3><strong>Aleksandr Batsuev</strong></h3>
+			<ul>
+				<li>Follow me on twitter: <a href="http://twitter.com/@alex_batsuev">@alex_batsuev</a></li>
+				<li>Follow me on github: <a href="http://github.com/batsuev">@batsuev</a></li>
+				<li>Mail: <a href="mailto:alex@.batsuev.com">alex@batsuev.com</a></li>
+				<li><a href="http://batsuev.com">batsuev.com</a></li>
+			</ul>
+		</section>
+	</div></div>
+
+	<div class="slide" id="Task"><div>
+		<section>
+			<header>
+				<h2>Простой проект: URL Shortener</h2>
+			</header>
+			<ul>
+				<li>Пользователь вводит URL</li>
+				<li>Получает короткую ссылку вместо исходной</li>
+				<li>Может посмотреть, сколько раз по этой ссылке перешли</li>
+				<li>При переходе по короткой ссылке открывается исходная ссылка</li>
+			</ul>
+		</section>
+	</div></div>
+
+	<div class="slide" id="php"><div>
+		<section>
+			<header>
+				<h2>Начинающий php программист</h2>
+			</header>
+			<ul>
+				<li><code>index.php</code> показать форму</li>
+				<li><code>index.php?act=create&amp;url=http://irkfap.com</code><br />сделать короткую ссылку</li>
+				<li><code>index.php?id=1</code> перейти по короткой ссылке</li>
+			</ul>
+		</section>
+	</div></div>
+
+	<div class="slide" id="phpIndex"><div>
+		<section>
+			<header>
+				<h2>Начинающий php программист: index.php</h2>
+			</header>
+			<div class='code'>
+<pre>
+<code><mark>&lt;?php  if (empty($_GET['id']) || empty($_GET['act'])) ?&gt;</mark></code>
+<code>//form code here</code>
+<code><mark>&lt;?php }else if (!empty($_GET['act']) &amp;&amp;</mark></code>
+<code><mark>              $_GET['act'] == 'create') {  ?&gt;</mark></code>
+<code>//создание короткой ссылки</code>
+<code><mark>&lt;?php }else if (!empty($_GET['id'])) { ?&gt;</mark></code>
+<code>//редирект на ссылку</code>
+<code><mark>&lt;?php } ?&gt;</mark></code>
+</pre>
+			</div>
+		</section>
+	</div></div>
+
+	<div class="slide" id="phpJunior"><div>
+		<section>
+			<header>
+				<h2>Начинающий php программист</h2>
+			</header>
+			<ul>
+				<li>HTML смешан с PHP и все в одном файле</li>
+				<li>Кошмарик <br /> <code>$id = mysqli_query('INSERT INTO urls (url) VALUES ('+$_GET['url']+')');</code></li>
+				<li>GET запрос для создания элемента</li>
+				<li>Нет обработки ошибок</li>
+			</ul>
+		</section>
+	</div></div>
+
+	<div class="slide" id="phpLearning"><div>
+		<section>
+			<header>
+				<h2>php программист</h2>
+			</header>
+			<ul>
+				<li>Все логично разбито</li>
+				<li>Есть шаблоны</li>
+				<li>Ассинхронные запросы</li>
+				<li>Убраны параметры из запросов</li>
+				<li>Используется PDO</li>
+				<li>...</li>
+			</ul>
+		</section>
+	</div></div>
+
+	<div class="slide" id="templates"><div>
+		<section>
+			<header>
+				<h2>Шаблоны: index.tpl</h2>
+			</header>
+			<pre style="font-size: 14px">
+<code>&lt;!doctype html&gt;</code>
+<code>&lt;html&gt;</code>
+<code>&lt;head&gt;</code>
+<code>	&lt;title&gt;URL Shortener&lt;/title&gt;</code>
+<code>	&lt;meta charset="UTF-8"&gt;</code>
+<code>&lt;/head&gt;</code>
+<code>&lt;body&gt;</code>
+<code>	&lt;form action="/" method="post"&gt;</code>
+<code>		&lt;input type="hidden" name="act" value="create" /&gt;</code>
+<code>		&lt;input type="text" name="url" /&gt;</code>
+<code>		&lt;input type="submit" /&gt;</code>
+<code>	&lt;/form&gt;</code>
+<code>&lt;/body&gt;</code>
+<code>&lt;/html&gt;</code>
+			</pre>
+		</section>
+	</div></div>
+
+	<div class="slide" id="controller"><div>
+		<section>
+			<header>
+				<h2>Controller</h2>
+			</header>
+			<pre style="font-size: 18px">
+<code>F3::route('GET /', function() {</code>
+<code>	$view = new Blitz('index.tpl');</code>
+<code>	$view->display();</code>
+<code>});</code>
+<code>F3::route('POST /create', function() {</code>
+<code>	...</code>
+<code>});</code>
+			</pre>
+		</section>
+	</div></div>
+
+	<div class="slide" id="ruby"><div>
+		<section>
+			<header>
+				<h2>Ruby</h2>
+			</header>
+			<pre>
+			<code>5.times {</code>
+			<code>  print "We *love* Ruby -- it's outrageous!" </code>
+			<code>}</code>
+		</section>
+	</div></div>
+
+	<div class="slide" id="sinatra"><div>
+		<section>
+			<header>
+				<h2>Sinatra - web microframework</h2>
+			</header>
+<pre style="font-size:20px">
+<code>get '/' do </code>
+<code>  slim :index</code>
+<code>end</code>
+<code></code>
+<code>post '/create' do</code>
+<code>  return DB[:links].insert(:url => params[:url])</code>
+<code>end</code>
+<code>get '/[:id]' do</code>
+<code>  redirect DB[:links].get(:id => params[:id])</code>
+<code>end</code>
+</pre>
+		</section>
+	</div></div>
+
+	<div class="slide" id="slim"><div>
+		<section>
+			<header>
+				<h2>Slim - templates engine</h2>
+			</header>
+<pre style="font-size:13px">
+<code>&lt;!doctype html&gt;</code>
+<code>&lt;html&gt;</code>
+<code>&lt;head&gt;</code>
+<code>	&lt;title&gt;URL Shortener&lt;/title&gt;</code>
+<code>	&lt;meta charset="UTF-8"&gt;</code>
+<code>&lt;/head&gt;</code>
+<code>&lt;body&gt;</code>
+<code>	&lt;form action="/" method="post"&gt;</code>
+<code>		&lt;input type="hidden" name="act" value="create" /&gt;</code>
+<code>		&lt;input type="text" name="url" /&gt;</code>
+<code>		&lt;input type="submit" /&gt;</code>
+<code>	&lt;/form&gt;</code>
+<code>&lt;/body&gt;</code>
+<code>&lt;/html&gt;</code>
+</pre>
+		</section>
+	</div></div>
+
+	<div class="slide" id="slim-template"><div>
+		<section>
+			<header>
+				<h2>Slim - templates engine</h2>
+			</header>
+<pre style="font-size:13px">
+<code>doctype html</code>
+<code>html</code>
+<code>  head</code>
+<code>    meta charset='utf-8'</code>
+<code>    title URL Shortener</code>
+<code>  body</code>
+<code>    form action="/create" method="post"</code>
+<code>    	input type="text" name="url"</code>
+<code>    	input type="submit"</code>
+</pre>
+		</section>
+	</div></div>
+
+	<div class="slide" id="sequel"><div>
+		<section>
+			<header>
+				<h2>Sequel - DB framework</h2>
+			</header>
+				<code>DB[:links].insert(:url => 'http://irkfap.com')<code><br />
+				<code>DB[:links].select(:url).where(:id => 0)<code>
+		</section>
+	</div></div>
+
+	<div class="slide" id="bootstrap"><div>
+		<section>
+			<header>
+				<h2>Twitter Bootstap - добавим красивости</h2>
+			</header>
+			<img src="./bootstrap.png" width="800"/>
+		</section>
+	</div></div>
+
+	<div class="slide" id="Q"><div>
+		<section>
+			<header>
+				<h2>Вопросы?</h2>
+			</header>
+			<h3><strong>Aleksandr Batsuev</strong></h3>
+			<ul>
+				<li>Follow me on twitter: <a href="http://twitter.com/@alex_batsuev">@alex_batsuev</a></li>
+				<li>Follow me on github: <a href="http://github.com/batsuev">@batsuev</a></li>
+				<li>Mail: <a href="mailto:alex@.batsuev.com">alex@batsuev.com</a></li>
+				<li><a href="http://batsuev.com">http://batsuev.com</a></li>
+			</ul>
+		</section>
+	</div></div>
+
+	<script src="../../shower/scripts/script.js"></script>
+
+	<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-217843-9']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+    </script>
+</body>
+</html>
